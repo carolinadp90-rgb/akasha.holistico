@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akasha - Espacio Holístico | Sanación, Autoconocimiento y Bienestar Integral</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: {
+                            50: '#f4f7f4',
+                            100: '#e3ebe3',
+                            200: '#ca9a8',
+                            300: '#a3b8a3',
+                            500: '#738e73',
+                            600: '#587158',
+                            800: '#384838',
+                            900: '#273327'
+                        },
+                        warmBg: '#FAF7F2',
+                        cardBg: '#FCFAf7',
+                        sand: '#EFEAE1',
+                        goldAccent: '#C8A97E',
+                        goldHover: '#B59567',
+                        lavenderSoft: '#E8E5EE',
+                        lavenderDark: '#6A5B7B',
+                        terracottaSoft: '#E6B89C'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FAF7F2;
+            color: #273327;
+        }
+        h1, h2, h3, .font-heading {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .bg-pattern {
+            background-image: radial-gradient(#C8A97E 0.75px, transparent 0.75px);
+            background-size: 24px 24px;
+            opacity: 0.25;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col relative overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-40 bg-warmBg/90 backdrop-blur-md border-b border-sand/80 transition-all duration-300" id="main-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full bg-sage-100 flex items-center justify-center border border-goldAccent/40 group-hover:bg-sage-200 transition-colors">
+                        <i data-lucide="sparkles" class="w-5 h-5 text-goldAccent"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-heading text-2xl font-semibold tracking-wider text-sage-900 leading-none">AKASHA</span>
+                        <span class="text-xs tracking-widest text-goldAccent font-medium uppercase mt-0.5">Espacio Holístico</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <div class="hidden md:flex items-center gap-8 text-sm font-medium text-sage-800">
+                    <a href="#inicio" class="hover:text-goldAccent transition-colors">Inicio</a>
+                    <a href="#sobre-mi" class="hover:text-goldAccent transition-colors">El Espacio</a>
+                    <a href="#recomendador" class="hover:text-goldAccent transition-colors text-sage-600 flex items-center gap-1"><i data-lucide="compass" class="w-4 h-4"></i> ¿Qué buscas?</a>
+                    <a href="#terapias" class="hover:text-goldAccent transition-colors">Terapias</a>
+                    <a href="#talleres" class="hover:text-goldAccent transition-colors">Talleres</a>
+                    <a href="#testimonios" class="hover:text-goldAccent transition-colors">Testimonios</a>
+                    <a href="#contacto" class="hover:text-goldAccent transition-colors">Contacto</a>
+                </div>
+
+                <!-- Action Button Desktop -->
+                <div class="hidden md:block">
+                    <a href="#contacto" class="bg-sage-600 hover:bg-sage-800 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all shadow-sm hover:shadow flex items-center gap-2">
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        <span>Reservar Turno</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-sage-800 hover:bg-sand/50 focus:outline-none" aria-label="Abrir Menú">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cardBg border-b border-sand px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-sage-800 hover:bg-sand/40">Inicio</a>
+            <a href="#sobre-mi" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-sage-800 hover:bg-sand/40">El Espacio</a>
+            <a href="#recomendador" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-sage-600 hover:bg-sand/40 flex items-center gap-2">
+                <i data-lucide="compass" class="w-4 h-4 text-goldAccent"></i> ¿Qué necesito hoy?
+            </a>
+            <a href="#terapias" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-sage-800 hover:bg-sand/40">Terapias</a>
+            <a href="#talleres" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-sage-800 hover:bg-sand/40">Talleres & Encuentros</a>
+            <a href="#testimonios" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-sage-800 hover:bg-sand/40">Testimonios</a>
+            <a href="#contacto" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-sage-800 hover:bg-sand/40">Contacto</a>
+            <a href="#contacto" class="mobile-link w-full text-center mt-2 bg-sage-600 text-white px-4 py-3 rounded-full font-medium shadow flex items-center justify-center gap-2">
+                <i data-lucide="calendar" class="w-4 h-4"></i> Reservar Turno
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-[85vh] flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <!-- Decorative subtle background shapes -->
+        <div class="absolute inset-0 bg-pattern pointer-events-none"></div>
+        <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-sage-100/60 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute bottom-10 right-10 w-[300px] h-[300px] bg-lavenderSoft/50 rounded-full blur-2xl -z-10"></div>
+
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sand/70 text-sage-800 text-xs sm:text-sm font-medium mb-6 border border-goldAccent/30 shadow-sm animate-fade-in">
+                <i data-lucide="sun" class="w-4 h-4 text-goldAccent"></i>
+                <span>Espacio de Sanación & Autoconocimiento</span>
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-sage-900 mb-6 leading-tight">
+                Reconecta con tu esencia, <br class="hidden sm:inline"/>
+                <span class="italic font-normal text-goldAccent">sana desde el alma</span>
+            </h1>
+            
+            <p class="text-lg sm:text-xl text-sage-800/90 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+                Un refugio amoroso para acompañarte en tu proceso de transformación personal, liberar bloqueos ancestrales y restaurar la armonía en tu vida integral.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#terapias" class="w-full sm:w-auto bg-sage-600 hover:bg-sage-800 text-white px-8 py-4 rounded-full font-medium text-base transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 group">
+                    <span>Explorar Terapias</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                <a href="#contacto" class="w-full sm:w-auto bg-cardBg hover:bg-sand text-sage-900 border border-goldAccent/50 px-8 py-4 rounded-full font-medium text-base transition-all duration-300 shadow-sm flex items-center justify-center gap-2">
+                    <i data-lucide="message-circle" class="w-5 h-5 text-goldAccent"></i>
+                    <span>Reservar Turno</span>
+                </a>
+            </div>
+
+            <!-- Highlights Pill -->
+            <div class="mt-16 grid grid-cols-2 sm:grid-cols-3 gap-4 pt-8 border-t border-sand/80 max-w-2xl mx-auto text-sage-800 text-sm">
+                <div class="flex items-center justify-center gap-2">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-goldAccent"></i>
+                    <span>Presencial & Online</span>
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i data-lucide="heart" class="w-4 h-4 text-goldAccent"></i>
+                    <span>Atención Empática</span>
+                </div>
+                <div class="flex items-center justify-center gap-2 col-span-2 sm:col-span-1">
+                    <i data-lucide="sparkles" class="w-4 h-4 text-goldAccent"></i>
+                    <span>Acompañamiento Holístico</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Recommender ("¿Qué necesitas hoy?") -->
+    <section id="recomendador" class="py-16 bg-gradient-to-b from-warmBg via-sand/40 to-warmBg relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <span class="text-xs uppercase tracking-widest text-goldAccent font-semibold">Guía de Sanación</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-sage-900 mt-1">¿Qué buscas o necesitas sanar hoy?</h2>
+                <p class="text-sage-800 text-sm sm:text-base mt-2 max-w-xl mx-auto">Selecciona la sensación o necesidad que más resuene contigo en este momento para recomendarte el espacio ideal.</p>
+            </div>
+
+            <!-- Recommendation Selector Pills -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10" id="intent-filters">
+                <button data-intent="all" class="intent-btn active bg-sage-600 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all shadow-sm">
+                    ✨ Mostrar Todo
+                </button>
+                <button data-intent="vinculos" class="intent-btn bg-cardBg hover:bg-sand border border-sand text-sage-800 px-5 py-2.5 rounded-full text-sm font-medium transition-all">
+                    🌿 Sanar Vínculos y Familia
+                </button>
+                <button data-intent="claridad" class="intent-btn bg-cardBg hover:bg-sand border border-sand text-sage-800 px-5 py-2.5 rounded-full text-sm font-medium transition-all">
+                    🔮 Claridad Emocional & Dirección
+                </button>
+                <button data-intent="bloqueos" class="intent-btn bg-cardBg hover:bg-sand border border-sand text-sage-800 px-5 py-2.5 rounded-full text-sm font-medium transition-all">
+                    ⚡ Energía & Limpieza de Bloqueos
+                </button>
+                <button data-intent="sagrado" class="intent-btn bg-cardBg hover:bg-sand border border-sand text-sage-800 px-5 py-2.5 rounded-full text-sm font-medium transition-all">
+                    🌸 Reconexión con lo Femenino
+                </button>
+            </div>
+
+            <!-- Recommendation Output Box -->
+            <div id="recommendation-result" class="bg-cardBg border border-goldAccent/30 rounded-3xl p-6 sm:p-8 shadow-sm transition-all duration-300">
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <div class="w-16 h-16 rounded-2xl bg-sage-100 flex items-center justify-center text-sage-600 shrink-0">
+                        <i data-lucide="compass" class="w-8 h-8"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-sage-900 mb-2">Explora nuestras disciplinas recomendadas</h3>
+                        <p class="text-sage-800 text-sm sm:text-base leading-relaxed">
+                            Elige una de las categorías anteriores para encontrar la herramienta que mejor responda a tu momento presente. Cada proceso es único y respetuoso con tus tiempos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mí / El Espacio -->
+    <section id="sobre-mi" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <!-- Image / Decorative Frame -->
+            <div class="relative">
+                <div class="relative z-10 rounded-3xl overflow-hidden shadow-xl border-4 border-cardBg bg-sand">
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1000&q=80" 
+                         alt="Espacio Holístico Akasha" 
+                         class="w-full h-[450px] sm:h-[520px] object-cover hover:scale-105 transition-transform duration-700">
+                </div>
+                <!-- Decorative background frame -->
+                <div class="absolute -bottom-6 -right-6 w-full h-full border-2 border-goldAccent/40 rounded-3xl -z-10 hidden sm:block"></div>
+                <div class="absolute -top-6 -left-6 w-32 h-32 bg-sage-100 rounded-full blur-2xl -z-10"></div>
+            </div>
+
+            <!-- Content -->
+            <div class="space-y-6">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-goldAccent font-semibold">Bienvenidos a Akasha</span>
+                    <h2 class="text-3xl sm:text-5xl font-bold text-sage-900 mt-1 leading-tight">Un espacio para volver a ti con amor y presencia</h2>
+                </div>
+
+                <p class="text-sage-800 leading-relaxed font-light text-base sm:text-lg">
+                    Hola, me alegra enormemente que estés aquí. En <strong class="text-sage-900 font-medium">Akasha Espacio Holístico</strong> concebimos al ser humano como un todo integrado: cuerpo, mente, emociones y alma.
+                </p>
+
+                <p class="text-sage-800 leading-relaxed font-light text-base">
+                    Mi misión es brindarte un contenedor seguro, cálido y libre de juicios, donde puedas comprender el origen de tus síntomas o patrones repetitivos. A través de la combinación de saberes ancestrales y terapias de vanguardia, te acompaño a tomar las riendas de tu propia sanación.
+                </p>
+
+                <!-- Key Values Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                    <div class="p-4 rounded-2xl bg-cardBg border border-sand">
+                        <i data-lucide="heart-handshake" class="w-6 h-6 text-goldAccent mb-2"></i>
+                        <h4 class="font-bold text-sage-900">Enfoque Empático</h4>
+                        <p class="text-xs text-sage-700 mt-1">Acompañamiento amoroso respetando el ritmo único de tu alma.</p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-cardBg border border-sand">
+                        <i data-lucide="feather" class="w-6 h-6 text-goldAccent mb-2"></i>
+                        <h4 class="font-bold text-sage-900">Modalidad Flexible</h4>
+                        <p class="text-xs text-sage-700 mt-1">Sesiones presenciales en nuestro centro y online para todo el mundo.</p>
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <a href="#contacto" class="inline-flex items-center gap-2 text-goldAccent font-semibold hover:text-goldHover transition-colors text-base border-b border-goldAccent/40 pb-1">
+                        <span>Conoce cómo trabajamos en consulta</span>
+                        <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terapias / Servicios -->
+    <section id="terapias" class="py-20 bg-sand/30 border-y border-sand">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs uppercase tracking-widest text-goldAccent font-semibold">Nuestras Propuestas</span>
+                <h2 class="text-3xl sm:text-5xl font-bold text-sage-900 mt-1">Terapias & Caminos de Sanación</h2>
+                <p class="text-sage-800 mt-3 text-base">Descubre la disciplina que resonará con tu necesidad actual. Haz clic en cualquiera para ver más información.</p>
+            </div>
+
+            <!-- Services Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
+                <button class="service-tab active bg-sage-600 text-white px-4 py-2 rounded-full text-xs sm:text-sm font-medium" data-filter="all">Todas</button>
+                <button class="service-tab bg-cardBg text-sage-800 hover:bg-sand border border-sand px-4 py-2 rounded-full text-xs sm:text-sm font-medium" data-filter="transgeneracional">Transgeneracional</button>
+                <button class="service-tab bg-cardBg text-sage-800 hover:bg-sand border border-sand px-4 py-2 rounded-full text-xs sm:text-sm font-medium" data-filter="energetica">Energéticas & Vibracionales</button>
+                <button class="service-tab bg-cardBg text-sage-800 hover:bg-sand border border-sand px-4 py-2 rounded-full text-xs sm:text-sm font-medium" data-filter="oraculo">Oráculos & Registros</button>
+            </div>
+
+            <!-- Therapies Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="therapies-grid">
+                
+                <!-- Card 1 -->
+                <div class="therapy-card bg-cardBg rounded-3xl p-6 sm:p-8 border border-sand/80 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between" data-category="transgeneracional" data-intent="vinculos">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-sage-100 flex items-center justify-center text-sage-600 mb-6">
+                            <i data-lucide="git-fork" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-xs uppercase tracking-wider text-goldAccent font-bold">Arbol Genealógico</span>
+                        <h3 class="text-2xl font-bold text-sage-900 mt-1 mb-3">Biodescodificación & Árbol Genealógico</h3>
+                        <p class="text-sage-700 text-sm leading-relaxed mb-6">
+                            Comprende el sentido biológico y emocional de tus síntomas. Libera lealtades invisibles y patrones heredados del clan familiar.
+                        </p>
+                    </div>
+                    <button class="open-modal-btn w-full bg-sand/60 hover:bg-sage-600 hover:text-white text-sage-900 py-3 rounded-2xl text-sm font-medium transition-all flex items-center justify-center gap-2"
+                            data-title="Biodescodificación Transgeneracional"
+                            data-desc="Esta terapia te permite indagar en la información guardada en tu inconsciente y en tu linaje. A través del análisis del árbol genealógico, identificamos lealtades familiares, duelos no procesados y programas repetitivos que se manifiestan en el presente como bloqueos o síntomas físicos."
+                            data-duration="90 minutos"
+                            data-modality="Presencial u Online"
+                            data-benefit="Liberación de patrones hereditarios, compresión de síntomas, paz emocional.">
+                        <span>Ver detalle completo</span>
+                        <i data-lucide="plus" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="therapy-card bg-cardBg rounded-3xl p-6 sm:p-8 border border-sand/80 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between" data-category="transgeneracional" data-intent="vinculos">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-lavenderSoft flex items-center justify-center text-lavenderDark mb-6">
+                            <i data-lucide="users" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-xs uppercase tracking-wider text-goldAccent font-bold">Vínculos & Orden</span>
+                        <h3 class="text-2xl font-bold text-sage-900 mt-1 mb-3">Constelaciones Familiares</h3>
+                        <p class="text-sage-700 text-sm leading-relaxed mb-6">
+                            Restaura los Órdenes del Amor en tu sistema. Permite que la energía fluya hacia la vida, ordenando el lugar que ocupas en tu familia.
+                        </p>
+                    </div>
+                    <button class="open-modal-btn w-full bg-sand/60 hover:bg-sage-600 hover:text-white text-sage-900 py-3 rounded-2xl text-sm font-medium transition-all flex items-center justify-center gap-2"
+                            data-title="Constelaciones Familiares"
+                            data-desc="Una mirada profunda al alma familiar. En sesiones individuales (con vincoras o plantillas) o grupales, visibilizamos las dinámicas ocultas que generan conflictos en tus relaciones, trabajo o salud, para darles un lugar y soltar la carga que no te corresponde."
+                            data-duration="75 - 90 minutos"
+                            data-modality="Presencial / Online"
+                            data-benefit="Reconciliación con la historia familiar, fuerza interior y claridad relacional.">
+                        <span>Ver detalle completo</span>
+                        <i data-lucide="plus" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="therapy-card bg-cardBg rounded-3xl p-6 sm:p-8 border border-sand/80 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between" data-category="oraculo" data-intent="claridad">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-sage-100 flex items-center justify-center text-sage-600 mb-6">
+                            <i data-lucide="moon" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-xs uppercase tracking-wider text-goldAccent font-bold">Autoconocimiento</span>
+                        <h3 class="text-2xl font-bold text-sage-900 mt-1 mb-3">Tarot Terapéutico y Evolutivo</h3>
+                        <p class="text-sage-700 text-sm leading-relaxed mb-6">
+                            Una potente herramienta proyectiva para hacer consciente lo inconsciente. No adivinatorio, sino un mapa de autodescubrimiento.
+                        </p>
+                    </div>
+                    <button class="open-modal-btn w-full bg-sand/60 hover:bg-sage-600 hover:text-white text-sage-900 py-3 rounded-2xl text-sm font-medium transition-all flex items-center justify-center gap-2"
+                            data-title="Tarot Terapéutico y Evolutivo"
+                            data-desc="El Tarot Evolutivo utiliza la simbología de los arquetipos para reflejar el estado actual de tu psique y tu momento vital. Es una guía para tomar decisiones alineadas, comprender tus aprendizajes actuales y descubrir tus propios recursos internos."
+                            data-duration="60 minutos"
+                            data-modality="Presencial u Online"
+                            data-benefit="Claridad mental, toma de decisiones consciente y orientación evolutiva.">
+                        <span>Ver detalle completo</span>
+                        <i data-lucide="plus" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="therapy-card bg-cardBg rounded-3xl p-6 sm:p-8 border border-sand/80 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between" data-category="oraculo" data-intent="claridad">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-lavenderSoft flex items-center justify-center text-lavenderDark mb-6">
+                            <i data-lucide="book-open" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-xs uppercase tracking-wider text-goldAccent font-bold">Lectura del Alma</span>
+                        <h3 class="text-2xl font-bold text-sage-900 mt-1 mb-3">Registros Akáshicos</h3>
+                        <p class="text-sage-700 text-sm leading-relaxed mb-6">
+                            Accede a las memorias de tu alma para recibir orientación de tus guías, entender el propósito de tus pruebas y elevar tu vibración.
+                        </p>
+                    </div>
+                    <button class="open-modal-btn w-full bg-sand/60 hover:bg-sage-600 hover:text-white text-sage-900 py-3 rounded-2xl text-sm font-medium transition-all flex items-center justify-center gap-2"
+                            data-title="Registros Akáshicos"
+                            data-desc="Los Registros Akáshicos son el libro o archivo vibracional del alma. Durante la sesión, abrimos tu campo akáshico para responder a tus preguntas personales sobre misión de vida, vínculos, bloqueos o elecciones importantes, recibiendo respuestas amorosas y de alta frecuencia."
+                            data-duration="60 a 75 minutos"
+                            data-modality="Online o Presencial"
+                            data-benefit="Paz profunda, confirmación del camino espiritual y guía clara.">
+                        <span>Ver detalle completo</span>
+                        <i data-lucide="plus" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="therapy-card bg-cardBg rounded-3xl p-6 sm:p-8 border border-sand/80 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between" data-category="energetica" data-intent="sagrado">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-terracottaSoft/30 flex items-center justify-center text-sage-800 mb-6">
+                            <i data-lucide="flower-2" class="w-6 h-6 text-goldAccent"></i>
+                        </div>
+                        <span class="text-xs uppercase tracking-wider text-goldAccent font-bold">Sanación Femenina</span>
+                        <h3 class="text-2xl font-bold text-sage-900 mt-1 mb-3">Rito del Útero & Munay-Ki</h3>
+                        <p class="text-sage-700 text-sm leading-relaxed mb-6">
+                            Un espacio sagrado para sanar memorias de dolor acumuladas en el centro creativo, honrando tu linaje femenino y reconectando con el gozo.
+                        </p>
+                    </div>
+                    <button class="open-modal-btn w-full bg-sand/60 hover:bg-sage-600 hover:text-white text-sage-900 py-3 rounded-2xl text-sm font-medium transition-all flex items-center justify-center gap-2"
+                            data-title="Rito del Útero (13° Rito Munay-Ki)"
+                            data-desc="Una transmisión energética ancestral entregada por las sabias de la selva. Liberamos el miedo y el sufrimiento del útero para dar paso a la creación, la intuición y la salud holística del sagrado femenino."
+                            data-duration="90 minutos"
+                            data-modality="Presencial (Individual o Grupal)"
+                            data-benefit="Empoderamiento personal, sanación del linaje de mujeres y restauración de la vitalidad.">
+                        <span>Ver detalle completo</span>
+                        <i data-lucide="plus" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="therapy-card bg-cardBg rounded-3xl p-6 sm:p-8 border border-sand/80 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between" data-category="energetica" data-intent="bloqueos">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-sage-100 flex items-center justify-center text-sage-600 mb-6">
+                            <i data-lucide="zap" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-xs uppercase tracking-wider text-goldAccent font-bold">Armonización</span>
+                        <h3 class="text-2xl font-bold text-sage-900 mt-1 mb-3">Limpieza Energética, Reiki & Péndulo Hebreo</h3>
+                        <p class="text-sage-700 text-sm leading-relaxed mb-6">
+                            Armoniza tu campo electromagnético, limpia miasmas o cargas pesadas y equilibra los chakras complementando con esencias de Flores de Bach.
+                        </p>
+                    </div>
+                    <button class="open-modal-btn w-full bg-sand/60 hover:bg-sage-600 hover:text-white text-sage-900 py-3 rounded-2xl text-sm font-medium transition-all flex items-center justify-center gap-2"
+                            data-title="Limpiezas Energéticas & Armonización"
+                            data-desc="Combina la radiestesia del Péndulo Hebreo para detectar y limpiar larvas o miasmas energéticos, junto a la vibración amorosa del Reiki Usui. Finalizamos con una fórmula personalizada de Flores de Bach para sostener el equilibrio emocional."
+                            data-duration="60 minutos"
+                            data-modality="Presencial u Online a distancia"
+                            data-benefit="Alivio del cansancio físico/mental, protección de tu aura y descanso reparador.">
+                        <span>Ver detalle completo</span>
+                        <i data-lucide="plus" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Próximos Talleres & Encuentros -->
+    <section id="talleres" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div>
+                <span class="text-xs uppercase tracking-widest text-goldAccent font-semibold">Encuentros Especiales</span>
+                <h2 class="text-3xl sm:text-5xl font-bold text-sage-900 mt-1">Próximos Talleres & Círculos</h2>
+            </div>
+            <p class="text-sage-700 max-w-md mt-4 md:mt-0 text-sm sm:text-base">
+                Espacios grupales para compartir, aprender y nutrir la tribu en modalidad presencial y virtual.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Workshop Item 1 -->
+            <div class="bg-cardBg rounded-3xl p-6 sm:p-8 border border-sand shadow-sm flex flex-col sm:flex-row gap-6 items-start">
+                <div class="bg-sage-100 border border-sage-200 rounded-2xl p-4 text-center shrink-0 w-full sm:w-28">
+                    <span class="block text-xs font-bold uppercase tracking-wider text-sage-700">Sábado</span>
+                    <span class="block text-3xl font-bold text-sage-900 font-heading">18</span>
+                    <span class="block text-xs font-medium text-goldAccent">OCTUBRE</span>
+                </div>
+                <div class="flex-1 space-y-3">
+                    <span class="inline-block px-3 py-1 bg-lavenderSoft/60 text-lavenderDark rounded-full text-xs font-semibold">Presencial • La Plata</span>
+                    <h3 class="text-2xl font-bold text-sage-900">Merienda & Magia: Taller de Introducción al Tarot</h3>
+                    <p class="text-sage-700 text-sm leading-relaxed">
+                        Un encuentro distendido para conectar con la simbología de los Arcanos Mayores, ejercicios prácticos y compartir una tarde diferente.
+                    </p>
+                    <div class="flex items-center justify-between pt-3 border-t border-sand">
+                        <span class="text-xs text-sage-600 font-medium"><i data-lucide="clock" class="w-3.5 h-3.5 inline mr-1"></i>16:00 a 19:00 hs</span>
+                        <a href="#contacto" class="text-goldAccent font-bold text-sm hover:underline flex items-center gap-1">Inscribirme <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Workshop Item 2 -->
+            <div class="bg-cardBg rounded-3xl p-6 sm:p-8 border border-sand shadow-sm flex flex-col sm:flex-row gap-6 items-start">
+                <div class="bg-sage-100 border border-sage-200 rounded-2xl p-4 text-center shrink-0 w-full sm:w-28">
+                    <span class="block text-xs font-bold uppercase tracking-wider text-sage-700">Domingo</span>
+                    <span class="block text-3xl font-bold text-sage-900 font-heading">02</span>
+                    <span class="block text-xs font-medium text-goldAccent">NOVIEMBRE</span>
+                </div>
+                <div class="flex-1 space-y-3">
+                    <span class="inline-block px-3 py-1 bg-sage-100 text-sage-800 rounded-full text-xs font-semibold">Online • Zoom</span>
+                    <h3 class="text-2xl font-bold text-sage-900">Círculo de Sanación del Linaje Materno</h3>
+                    <p class="text-sage-700 text-sm leading-relaxed">
+                        Meditación guiada, ejercicios de constelaciones y rito de integración para reconciliar con la energía materna e ir hacia la abundancia.
+                    </p>
+                    <div class="flex items-center justify-between pt-3 border-t border-sand">
+                        <span class="text-xs text-sage-600 font-medium"><i data-lucide="clock" class="w-3.5 h-3.5 inline mr-1"></i>18:00 a 20:30 hs</span>
+                        <a href="#contacto" class="text-goldAccent font-bold text-sm hover:underline flex items-center gap-1">Inscribirme <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section id="testimonios" class="py-20 bg-gradient-to-b from-warmBg to-sand/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-widest text-goldAccent font-semibold">Experiencias</span>
+                <h2 class="text-3xl sm:text-5xl font-bold text-sage-900 mt-1">Palabras de quienes ya caminaron el proceso</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-cardBg p-8 rounded-3xl border border-sand shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-goldAccent mb-4">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-sage-800 text-sm leading-relaxed italic mb-6">
+                            "La sesión de Biodescodificación cambió mi forma de entender mi migraña constante. Pude liberarme de una exigencia familiar que llevaba años sosteniendo. Me sentí contenida amorosamente."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-sand">
+                        <div class="w-10 h-10 rounded-full bg-sage-200 flex items-center justify-center font-bold text-sage-800">
+                            MP
+                        </div>
+                        <div>
+                            <span class="block text-sm font-bold text-sage-900">María Paula</span>
+                            <span class="block text-xs text-sage-600">Sesión de Bio & Árbol</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-cardBg p-8 rounded-3xl border border-sand shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-goldAccent mb-4">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-sage-800 text-sm leading-relaxed italic mb-6">
+                            "Los Registros Akáshicos me dieron una claridad inmensa justo cuando me sentía estancada profesionalmente. Salí con el alma liviana y renovada. ¡Súper recomendable!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-sand">
+                        <div class="w-10 h-10 rounded-full bg-lavenderSoft flex items-center justify-center font-bold text-lavenderDark">
+                            CS
+                        </div>
+                        <div>
+                            <span class="block text-sm font-bold text-sage-900">Camila S.</span>
+                            <span class="block text-xs text-sage-600">Registros Akáshicos Online</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-cardBg p-8 rounded-3xl border border-sand shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-goldAccent mb-4">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-sage-800 text-sm leading-relaxed italic mb-6">
+                            "Participe del Rito del Útero y fue una experiencia mágica e imborrable. La calidez del espacio Akasha te abraza desde el momento en que cruzas la puerta."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-sand">
+                        <div class="w-10 h-10 rounded-full bg-terracottaSoft/40 flex items-center justify-center font-bold text-sage-900">
+                            VR
+                        </div>
+                        <div>
+                            <span class="block text-sm font-bold text-sage-900">Valeria R.</span>
+                            <span class="block text-xs text-sage-600">Encuentro Presencial</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto & Reserva -->
+    <section id="contacto" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="bg-cardBg rounded-3xl border border-sand/80 p-8 sm:p-12 shadow-lg relative overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Info Column -->
+                <div class="space-y-6">
+                    <div>
+                        <span class="text-xs uppercase tracking-widest text-goldAccent font-semibold">Reserva tu momento</span>
+                        <h2 class="text-3xl sm:text-5xl font-bold text-sage-900 mt-1">Demos el primer paso juntos</h2>
+                    </div>
+                    <p class="text-sage-800 leading-relaxed font-light">
+                        ¿Tienes dudas sobre qué terapia elegir o deseas coordinar un turno? Escríbenos directamente o completa el formulario y te responderemos a la brevedad.
+                    </p>
+
+                    <div class="space-y-4 pt-4 text-sage-800 text-sm">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-sage-100 flex items-center justify-center text-sage-600 shrink-0">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <span class="block font-bold text-sage-900">Ubicación</span>
+                                <span class="text-sage-700">La Plata, Buenos Aires & Sesiones Online a todo el mundo</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-sage-100 flex items-center justify-center text-sage-600 shrink-0">
+                                <i data-lucide="clock" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <span class="block font-bold text-sage-900">Horarios de Atención</span>
+                                <span class="text-sage-700">Lunes a Viernes de 9:00 a 19:00 hs</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-sage-100 flex items-center justify-center text-sage-600 shrink-0">
+                                <i data-lucide="message-square" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <span class="block font-bold text-sage-900">Atención Directa</span>
+                                <span class="text-sage-700">WhatsApp inmediato</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct WhatsApp Button -->
+                    <div class="pt-6">
+                        <a href="https://wa.me/5492210000000?text=Hola!%20Me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20las%20terapias%20de%20Akasha" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20bd5a] text-white px-6 py-3.5 rounded-2xl font-medium shadow transition-all">
+                            <i data-lucide="phone-call" class="w-5 h-5"></i>
+                            <span>Escribir por WhatsApp Directo</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Form Column -->
+                <div class="bg-warmBg p-6 sm:p-8 rounded-2xl border border-sand">
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-sage-800 uppercase tracking-wider mb-2">Nombre Completo</label>
+                            <input type="text" required placeholder="Tu nombre" class="w-full px-4 py-3 rounded-xl bg-cardBg border border-sand focus:outline-none focus:border-goldAccent text-sage-900 text-sm">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-sage-800 uppercase tracking-wider mb-2">Teléfono / WhatsApp</label>
+                            <input type="tel" required placeholder="+54 9 221 ..." class="w-full px-4 py-3 rounded-xl bg-cardBg border border-sand focus:outline-none focus:border-goldAccent text-sage-900 text-sm">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-sage-800 uppercase tracking-wider mb-2">Servicio o Taller de interés</label>
+                            <select class="w-full px-4 py-3 rounded-xl bg-cardBg border border-sand focus:outline-none focus:border-goldAccent text-sage-900 text-sm">
+                                <option>Selecciona una opción</option>
+                                <option>Biodescodificación & Árbol Genealógico</option>
+                                <option>Constelaciones Familiares</option>
+                                <option>Tarot Terapéutico y Evolutivo</option>
+                                <option>Registros Akáshicos</option>
+                                <option>Rito del Útero</option>
+                                <option>Limpieza Energética / Reiki</option>
+                                <option>Taller Presencial / Online</option>
+                                <option>Consulta General</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-sage-800 uppercase tracking-wider mb-2">Mensaje o Preferencia de Horario</label>
+                            <textarea rows="4" placeholder="Cuéntame brevemente qué buscas o tus dudas..." class="w-full px-4 py-3 rounded-xl bg-cardBg border border-sand focus:outline-none focus:border-goldAccent text-sage-900 text-sm"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-sage-600 hover:bg-sage-800 text-white font-medium py-3.5 rounded-xl transition-all shadow text-sm flex items-center justify-center gap-2">
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                            <span>Enviar Mensaje de Reserva</span>
+                        </button>
+                    </form>
+                    <div id="form-feedback" class="hidden mt-4 p-4 rounded-xl bg-sage-100 text-sage-800 text-sm text-center font-medium">
+                        ✨ ¡Gracias por escribirnos! Te responderemos muy pronto para coordinar tu cita.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-sage-900 text-sand py-12 border-t border-sage-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- Col 1 -->
+                <div class="space-y-4 md:col-span-1">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="sparkles" class="w-5 h-5 text-goldAccent"></i>
+                        <span class="font-heading text-2xl font-bold tracking-wider text-white">AKASHA</span>
+                    </div>
+                    <p class="text-xs text-sage-300 leading-relaxed">
+                        Espacio holístico dedicado al bienestar integral, la sanación emocional y el despertar de la consciencia.
+                    </p>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-goldAccent mb-4">Navegación</h4>
+                    <ul class="space-y-2 text-xs text-sage-200">
+                        <li><a href="#inicio" class="hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="#sobre-mi" class="hover:text-white transition-colors">El Espacio</a></li>
+                        <li><a href="#terapias" class="hover:text-white transition-colors">Terapias</a></li>
+                        <li><a href="#talleres" class="hover:text-white transition-colors">Próximos Talleres</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-goldAccent mb-4">Modalidades</h4>
+                    <ul class="space-y-2 text-xs text-sage-200">
+                        <li>• Sesiones Presenciales en La Plata</li>
+                        <li>• Sesiones Online por Videollamada</li>
+                        <li>• Talleres e Integraciones Grupales</li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-goldAccent mb-4">Redes & Comunidad</h4>
+                    <div class="flex gap-4 text-sage-200">
+                        <a href="https://instagram.com" target="_blank" class="w-9 h-9 rounded-full bg-sage-800 flex items-center justify-center hover:bg-goldAccent hover:text-sage-900 transition-all">
+                            <i data-lucide="instagram" class="w-4 h-4"></i>
+                        </a>
+                        <a href="https://wa.me/5492210000000" target="_blank" class="w-9 h-9 rounded-full bg-sage-800 flex items-center justify-center hover:bg-goldAccent hover:text-sage-900 transition-all">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                        </a>
+                        <a href="mailto:info@akasha.com" class="w-9 h-9 rounded-full bg-sage-800 flex items-center justify-center hover:bg-goldAccent hover:text-sage-900 transition-all">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-sage-800 text-center text-xs text-sage-400 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <span>&copy; 2026 Akasha Espacio Holístico. Todos los derechos reservados.</span>
+                <span>Sanación y Amor en cada encuentro</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5492210000000?text=Hola!%20Me%20contacto%20desde%20la%20web%20para%20consultar%20por%20turnos" 
+       target="_blank" 
+       aria-label="Contactar por WhatsApp"
+       class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+        <i data-lucide="message-circle" class="w-7 h-7"></i>
+    </a>
+
+    <!-- Service Modal Popup -->
+    <div id="service-modal" class="fixed inset-0 z-50 bg-sage-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-cardBg rounded-3xl max-w-xl w-full p-6 sm:p-8 border border-sand shadow-2xl relative animate-fade-in max-h-[90vh] overflow-y-auto">
+            <button id="close-modal-btn" class="absolute top-6 right-6 text-sage-600 hover:text-sage-900 p-2 rounded-full hover:bg-sand/60">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div class="mb-4">
+                <span class="text-xs uppercase tracking-wider text-goldAccent font-bold">Detalle de la Terapia</span>
+                <h3 id="modal-title" class="text-3xl font-bold text-sage-900 mt-1">Título de Terapia</h3>
+            </div>
+            
+            <p id="modal-desc" class="text-sage-800 text-sm sm:text-base leading-relaxed mb-6">
+                Descripción detallada...
+            </p>
+
+            <div class="space-y-3 bg-warmBg p-4 rounded-2xl border border-sand mb-6 text-xs sm:text-sm">
+                <div class="flex items-center gap-2 text-sage-800">
+                    <i data-lucide="clock" class="w-4 h-4 text-goldAccent"></i>
+                    <span class="font-bold">Duración:</span>
+                    <span id="modal-duration">--</span>
+                </div>
+                <div class="flex items-center gap-2 text-sage-800">
+                    <i data-lucide="map-pin" class="w-4 h-4 text-goldAccent"></i>
+                    <span class="font-bold">Modalidad:</span>
+                    <span id="modal-modality">--</span>
+                </div>
+                <div class="flex items-center gap-2 text-sage-800">
+                    <i data-lucide="sparkles" class="w-4 h-4 text-goldAccent"></i>
+                    <span class="font-bold">Beneficios principales:</span>
+                    <span id="modal-benefit">--</span>
+                </div>
+            </div>
+
+            <div class="flex gap-4">
+                <a id="modal-whatsapp-link" href="#" target="_blank" class="flex-1 bg-sage-600 hover:bg-sage-800 text-white font-medium py-3 rounded-2xl text-center text-sm transition-all shadow flex items-center justify-center gap-2">
+                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                    <span>Consultar Disponibilidad</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Initialize Lucide Icons
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Interactive Recommender Intent Logic
+            const intentBtns = document.querySelectorAll('.intent-btn');
+            const recommendationResult = document.getElementById('recommendation-result');
+
+            const intentData = {
+                all: {
+                    title: "Explora nuestras disciplinas recomendadas",
+                    desc: "Ofrecemos abordajes integrales para el bienestar. Puedes explorar todas nuestras opciones o seleccionar una intención en particular.",
+                    suggested: ["Biodescodificación", "Constelaciones", "Tarot Evolutivo", "Registros Akáshicos", "Limpieza Energética"]
+                },
+                vinculos: {
+                    title: "Sanar Vínculos, Familia & Relaciones",
+                    desc: "Te recomendamos comenzar con Biodescodificación Transgeneracional o Constelaciones Familiares. Estas disciplinas permiten comprender los enredos del sistema familiar y sanar patrones afectivos.",
+                    suggested: ["Biodescodificación Transgeneracional", "Constelaciones Familiares"]
+                },
+                claridad: {
+                    title: "Claridad Emocional & Dirección de Vida",
+                    desc: "Te aconsejamos una sesión de Tarot Terapéutico y Evolutivo o una Lectura de Registros Akáshicos para aportar luz y dirección a tus elecciones presentes.",
+                    suggested: ["Tarot Terapéutico y Evolutivo", "Registros Akáshicos"]
+                },
+                bloqueos: {
+                    title: "Limpieza Energética & Alivio Corporal",
+                    desc: "La Armonización con Péndulo Hebreo, Reiki y Limpiezas Energéticas te ayudará a disolver cargas sutiles, mejorando tu nivel de energía vital e insomnio.",
+                    suggested: ["Limpieza Energética & Péndulo Hebreo", "Reiki Usui"]
+                },
+                sagrado: {
+                    title: "Reconexión con lo Femenino & Gozo",
+                    desc: "Te sugerimos recibir el Rito del Útero o participar en nuestros círculos de mujeres para liberar memorias ancestrales y reconectar con la matriz creadora.",
+                    suggested: ["Rito del Útero (Munay-Ki)", "Círculo de Sanación"]
+                }
+            };
+
+            intentBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    intentBtns.forEach(b => {
+                        b.classList.remove('active', 'bg-sage-600', 'text-white');
+                        b.classList.add('bg-cardBg', 'text-sage-800');
+                    });
+                    btn.classList.add('active', 'bg-sage-600', 'text-white');
+                    btn.classList.remove('bg-cardBg', 'text-sage-800');
+
+                    const intentKey = btn.getAttribute('data-intent');
+                    const info = intentData[intentKey];
+
+                    recommendationResult.innerHTML = `
+                        <div class="flex flex-col md:flex-row items-start md:items-center gap-6 animate-fade-in">
+                            <div class="w-16 h-16 rounded-2xl bg-sage-100 flex items-center justify-center text-sage-600 shrink-0">
+                                <i data-lucide="sparkles" class="w-8 h-8 text-goldAccent"></i>
+                            </div>
+                            <div class="space-y-2">
+                                <h3 class="text-2xl font-bold text-sage-900">${info.title}</h3>
+                                <p class="text-sage-800 text-sm sm:text-base leading-relaxed">${info.desc}</p>
+                                <div class="pt-2 flex flex-wrap gap-2">
+                                    ${info.suggested.map(item => `<span class="px-3 py-1 bg-sage-100 text-sage-800 text-xs font-semibold rounded-full border border-sage-200">✨ ${item}</span>`).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    lucide.createIcons();
+
+                    // Also filter cards grid based on intent if applicable
+                    filterTherapiesByIntent(intentKey);
+                });
+            });
+
+            function filterTherapiesByIntent(intentKey) {
+                const cards = document.querySelectorAll('.therapy-card');
+                cards.forEach(card => {
+                    if (intentKey === 'all' || card.getAttribute('data-intent') === intentKey) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+
+            // Category Filter Tabs
+            const filterTabs = document.querySelectorAll('.service-tab');
+            filterTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    filterTabs.forEach(t => {
+                        t.classList.remove('active', 'bg-sage-600', 'text-white');
+                        t.classList.add('bg-cardBg', 'text-sage-800');
+                    });
+                    tab.classList.add('active', 'bg-sage-600', 'text-white');
+                    tab.classList.remove('bg-cardBg', 'text-sage-800');
+
+                    const filter = tab.getAttribute('data-filter');
+                    const cards = document.querySelectorAll('.therapy-card');
+
+                    cards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Modal Functionality
+            const modal = document.getElementById('service-modal');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const openModalBtns = document.querySelectorAll('.open-modal-btn');
+
+            openModalBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.getElementById('modal-title').textContent = btn.getAttribute('data-title');
+                    document.getElementById('modal-desc').textContent = btn.getAttribute('data-desc');
+                    document.getElementById('modal-duration').textContent = btn.getAttribute('data-duration');
+                    document.getElementById('modal-modality').textContent = btn.getAttribute('data-modality');
+                    document.getElementById('modal-benefit').textContent = btn.getAttribute('data-benefit');
+
+                    const serviceName = encodeURIComponent(btn.getAttribute('data-title'));
+                    document.getElementById('modal-whatsapp-link').href = `https://wa.me/5492210000000?text=Hola!%20Deseo%20consultar%20disponibilidad%20para%20la%20terapia:%20${serviceName}`;
+
+                    modal.classList.remove('hidden');
+                });
+            });
+
+            closeModalBtn.addEventListener('click', () => {
+                modal.classList.add('hidden');
+            });
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.add('hidden');
+                }
+            });
+
+            // Contact Form Handle
+            const contactForm = document.getElementById('contact-form');
+            const formFeedback = document.getElementById('form-feedback');
+
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                formFeedback.classList.remove('hidden');
+                contactForm.reset();
+                setTimeout(() => {
+                    formFeedback.classList.add('hidden');
+                }, 5000);
+            });
+        });
+    </script>
+</body>
+</html>
